@@ -1,0 +1,162 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { site } from '../config/site.config';
+---
+
+<PageLayout title={site.defaultTitle} description={site.defaultDescription}>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="relative bg-brand-primary text-white overflow-hidden min-h-[520px] flex items-center">
+    <div class="relative z-10 section-container w-full py-16 lg:py-24">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-brand-secondary/20 border border-brand-secondary/50 text-brand-accent text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+          Freelance · Webs para negocios locales de servicios
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6">
+          SEO técnico<span class="text-brand-secondary">.</span><br />
+          Contenido con <span class="text-brand-accent">IA</span><span class="text-brand-secondary">.</span><br />
+          Email marketing<span class="text-brand-secondary">.</span>
+        </h1>
+
+        <p class="text-lg text-gray-300 mb-8 max-w-xl">
+          Construyo webs de servicios locales que posicionan de verdad: SEO técnico riguroso, blogs que se
+          autoalimentan con IA sin publicar errores, y automatizaciones de email marketing encima. Todo montado
+          y verificado en un proyecto real.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 mb-8">
+          <a href="#proyectos" class="btn-cta text-lg py-4 px-7">
+            Ver proyecto real
+          </a>
+          <a href="/contacto/" class="btn-outline-white text-lg py-4 px-7">
+            Hablemos de tu web
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-gray-300">
+          <span class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            SEO sin trucos que penalicen
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            Contenido con validación real
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+            Sin datos ni reseñas fabricadas
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SOBRE MÍ ======================== -->
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-6">
+          Rigor antes que atajos
+        </h2>
+        <div class="text-gray-600 leading-relaxed space-y-4 text-left">
+          <p>
+            La mayoría de freelances de webs ofrecen "una web bonita" y paran ahí. Yo construyo los tres pilares
+            juntos —SEO técnico, contenido automatizado con IA y email marketing— porque es lo que un negocio
+            local necesita para captar clientes de verdad, no solo para tener presencia online.
+          </p>
+          <p>
+            En el primer proyecto real que construí con este enfoque, rechacé añadir reseñas falsas aunque
+            técnicamente habrían sumado estrellas en Google, detecté yo mismo una contradicción de precios entre
+            dos páginas antes de que se publicara, y exigí verificación real de los datos antes de darlos por
+            buenos. Esa misma disciplina se aplica a cualquier cifra o resultado que publique de mi propio
+            trabajo: si no es un dato real y verificado, no lo vas a ver aquí.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SERVICIOS ======================== -->
+  <section id="servicios" class="section-padding bg-gray-50">
+    <div class="section-container">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-3">
+          Qué construyo
+        </h2>
+        <p class="text-gray-600 max-w-xl mx-auto">
+          Tres piezas que casi nunca van juntas, y que sin embargo son las que mueven la aguja para un negocio
+          local de servicios.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {site.pillars.map((p) => (
+          <div class="bg-white rounded-xl border border-gray-200 p-6">
+            <div class="w-12 h-12 bg-brand-secondary/10 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" set:html={p.icon} />
+            </div>
+            <h3 class="font-bold text-brand-primary text-lg mb-2">{p.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{p.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROYECTOS ======================== -->
+  <section id="proyectos" class="section-padding bg-white">
+    <div class="section-container">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-3">
+          Proyecto real
+        </h2>
+        <p class="text-gray-600 max-w-xl mx-auto">
+          No es una maqueta: es una web en producción, con SEO técnico y un blog que se genera solo.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
+        {site.projects.map((p) => (
+          <div class="bg-gray-50 rounded-2xl border border-gray-200 p-8">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-2 h-2 rounded-full bg-green-500"></span>
+              <span class="text-xs font-bold uppercase tracking-widest text-gray-500">En producción</span>
+            </div>
+            <h3 class="font-bold text-brand-primary text-2xl mb-2">{p.name}</h3>
+            <p class="text-gray-600 mb-5">{p.shortDesc}</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              {p.tags.map((t) => (
+                <span class="text-xs font-semibold bg-brand-secondary/10 text-brand-secondary px-3 py-1 rounded-full">{t}</span>
+              ))}
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href={`/proyectos/${p.slug}/`} class="btn-primary">
+                Ver caso de estudio
+              </a>
+              <a href={p.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 text-center">
+                Visitar la web ↗
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CTA FINAL ======================== -->
+  <section class="section-padding bg-brand-primary text-white">
+    <div class="section-container text-center">
+      <h2 class="text-2xl lg:text-3xl font-bold mb-4">
+        ¿Tienes un negocio local y tu web no capta clientes?
+      </h2>
+      <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto">
+        Cuéntame qué haces y qué falla. Te respondo con una valoración honesta, no una plantilla de venta.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contacto/" class="btn-cta text-xl py-5 px-10">
+          Hablemos
+        </a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

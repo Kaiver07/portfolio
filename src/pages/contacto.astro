@@ -1,0 +1,39 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { site } from '../config/site.config';
+
+const title = 'Contacto — ' + site.name;
+const description = 'Escríbeme para hablar de SEO técnico, contenido con IA o email marketing para tu negocio local.';
+---
+
+<PageLayout title={title} description={description}>
+
+  <section class="section-padding bg-white min-h-[60vh] flex items-center">
+    <div class="section-container">
+      <div class="max-w-2xl mx-auto text-center">
+        <h1 class="text-3xl lg:text-4xl font-bold text-brand-primary mb-4">
+          Hablemos de tu web
+        </h1>
+        <p class="text-gray-600 text-lg mb-10">
+          Cuéntame en qué punto está tu negocio y qué te gustaría conseguir. Te respondo directamente, sin
+          intermediarios ni plantillas.
+        </p>
+
+        <div class="bg-gray-50 rounded-2xl border border-gray-200 p-8 flex flex-col gap-4">
+          <a href={`mailto:${site.email}`} class="btn-cta text-lg py-4 justify-center">
+            {site.email}
+          </a>
+          <div class="flex gap-3 justify-center">
+            <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 justify-center">
+              LinkedIn
+            </a>
+            <a href={site.github} target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 justify-center">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

@@ -1,0 +1,85 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { site } from '../../config/site.config';
+
+const project = site.projects.find((p) => p.slug === 'tejados-vitoria')!;
+
+const title = 'Caso de estudio: Tejados Vitoria Express — SEO técnico + blog con IA | ' + site.name;
+const description =
+  'Cómo construí reparaciondetejadosvitoria.es: arquitectura SEO técnica, un blog que se genera solo con IA sin publicar errores, y las decisiones de rigor que marcaron el proyecto.';
+---
+
+<PageLayout title={title} description={description}>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="bg-brand-primary text-white">
+    <div class="section-container py-14 lg:py-20">
+      <a href="/#proyectos" class="text-brand-accent text-sm font-semibold hover:underline">← Volver a proyectos</a>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mt-4 mb-4">
+        {project.name}
+      </h1>
+      <p class="text-lg text-gray-300 max-w-2xl">{project.shortDesc}</p>
+      <div class="flex flex-wrap gap-2 mt-6">
+        {project.tags.map((t) => (
+          <span class="text-xs font-semibold bg-white/10 text-white px-3 py-1 rounded-full">{t}</span>
+        ))}
+      </div>
+      <a href={project.url} target="_blank" rel="noopener noreferrer" class="btn-cta mt-8">
+        Visitar la web ↗
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================== CONTENIDO ======================== -->
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto case-prose">
+
+        <h2>El problema</h2>
+        <p>
+          Un negocio local de reparación de tejados en Vitoria-Gasteiz necesitaba presencia online desde cero:
+          sin web, sin posicionamiento en Google, y compitiendo en un sector donde casi todos los competidores
+          tienen webs anticuadas, lentas o sin estructura SEO real. El reto no era solo "tener una web", sino
+          construir algo que generara clientes de verdad para un negocio de servicios locales.
+        </p>
+
+        <h2>Qué se construyó</h2>
+        <p>
+          Un sitio en <strong>Astro + Tailwind CSS</strong>, desplegado en <strong>Vercel</strong>, con arquitectura
+          pensada desde el inicio para SEO técnico:
+        </p>
+        <ul>
+          <li>Páginas de servicio individuales (reparación, retejado, impermeabilización, canalones, aislamiento, claraboyas, fachadas, cubiertas industriales...), cada una con su propio título, meta descripción, contenido específico y preguntas frecuentes.</li>
+          <li>Páginas de zona para cada municipio de la comarca de Álava donde opera el negocio, evitando el error común de contenido casi duplicado entre páginas similares.</li>
+          <li>Datos estructurados (JSON-LD) de tipo <code>LocalBusiness</code> en todas las páginas, con dirección, horario, geolocalización y zonas de servicio.</li>
+          <li>Sitemap XML automático, imágenes optimizadas (WebP, carga diferida) y un hero de home migrado de <code>background-image</code> en CSS a imagen optimizada por Astro, tras detectar que era el recurso que más tardaba en cargar.</li>
+          <li>Un blog que se autoalimenta con IA: un script genera artículos siguiendo un calendario editorial, pero <strong>nunca publica sin pasar validación</strong> — longitud mínima, ausencia de enlaces inventados, y bloqueo de la publicación si algo falla. La parte difícil no fue generar contenido, fue asegurarse de que nunca se publicara un error.</li>
+          <li>Analítica con Vercel Analytics y Google Analytics 4, cargado solo si el usuario acepta el banner de cookies.</li>
+        </ul>
+
+        <h2>Las decisiones que marcaron el proyecto</h2>
+        <p>
+          El sector de las reseñas online es donde más fácil es hacer trampa: marcar reseñas propias con schema
+          técnicamente suma estrellas visibles en Google, aunque la práctica esté prohibida por sus políticas.
+          Se descartó desde el principio. Durante el desarrollo también se detectó una contradicción de precios
+          entre dos páginas del sitio antes de que llegara a publicarse, y se exigió verificar cualquier dato
+          antes de darlo por bueno — la misma disciplina que aplico a este propio caso de estudio: no vas a
+          encontrar aquí una cifra que no pueda respaldar.
+        </p>
+
+        <h2>Resultado</h2>
+        <p>
+          La web está en producción y en fase de indexación. En cuanto haya datos reales de Google Search
+          Console (páginas indexadas, impresiones, clics), esta sección se actualizará con cifras verificadas —
+          no antes.
+        </p>
+
+        <p class="mt-8">
+          <a href="/contacto/">¿Quieres algo parecido para tu negocio? Hablemos →</a>
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

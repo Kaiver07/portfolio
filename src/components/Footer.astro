@@ -1,0 +1,45 @@
+---
+import { site } from '../config/site.config';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-brand-primary text-white">
+  <div class="section-container py-12 lg:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- Sobre mí -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">{site.name}</h3>
+        <p class="text-gray-300 text-sm leading-relaxed mb-4">{site.tagline}</p>
+        <a href={`mailto:${site.email}`} class="text-brand-accent hover:text-white font-semibold text-sm transition-colors">
+          {site.email}
+        </a>
+      </div>
+
+      <!-- Navegación -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Navegación</h3>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li><a href="/#servicios" class="hover:text-white transition-colors">Servicios</a></li>
+          <li><a href="/#proyectos" class="hover:text-white transition-colors">Proyectos</a></li>
+          <li><a href="/contacto/" class="hover:text-white transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Encuéntrame</h3>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li><a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a></li>
+          <li><a href={site.github} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/20 mt-10 pt-6 text-sm text-gray-400 flex flex-col sm:flex-row justify-between gap-2">
+      <p>© {year} {site.name}</p>
+      <p>Hecho con Astro + Tailwind, desplegado en Vercel</p>
+    </div>
+  </div>
+</footer>
