@@ -5,3 +5,6 @@ dist/
 .env
 .DS_Store
 .vercel
+
+# Claude Code (config local de cada máquina)
+.claude/settings.local.json

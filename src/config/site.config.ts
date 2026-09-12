@@ -9,6 +9,11 @@ export interface Pillar {
   description: string;
 }
 
+export interface WorkPrinciple {
+  title: string;
+  description: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -60,6 +65,27 @@ export const site = {
         'Captación de leads, secuencias de nurture automatizadas y comunicación directa con el cliente del negocio — la pieza que la mayoría de webs de servicios locales no tiene.',
     },
   ] satisfies Pillar[],
+
+  // ============================================================
+  // CÓMO TRABAJO (ejemplos reales de rigor, no principios abstractos)
+  // ============================================================
+  howIWork: [
+    {
+      title: 'Rechazo lo que suma en Google pero es falso',
+      description:
+        'En un proyecto real rechacé añadir reseñas falsas aunque técnicamente habrían sumado estrellas — no se publican datos que no pueda verificar.',
+    },
+    {
+      title: 'Reviso antes de que se publique, no después',
+      description:
+        'Detecté yo mismo una contradicción de precios entre dos páginas antes de que saliera a producción, revisando el sitio como lo haría un cliente real.',
+    },
+    {
+      title: 'La IA genera, nunca publica sola',
+      description:
+        'El contenido automatizado pasa validación de calidad — longitud mínima, sin enlaces inventados — y si algo falla, no se publica. Punto.',
+    },
+  ] satisfies WorkPrinciple[],
 
   // ============================================================
   // PROYECTOS
