@@ -1,0 +1,16 @@
+---
+interface Props {
+  items: { q: string; a: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="faq">
+  {items.map((f, i) => (
+    <details class:list={[i > 0 && 'hairline']}>
+      <summary>{f.q}</summary>
+      <p class="pb-5 -mt-1 text-ink-soft leading-relaxed max-w-2xl">{f.a}</p>
+    </details>
+  ))}
+</div>

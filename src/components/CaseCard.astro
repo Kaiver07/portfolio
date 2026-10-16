@@ -1,0 +1,32 @@
+---
+import BrowserFrame from './BrowserFrame.astro';
+import type { Case } from '../config/site.config';
+
+interface Props {
+  item: Case;
+}
+
+const { item } = Astro.props;
+---
+
+<article class="group flex flex-col">
+  <a href={`/casos/${item.slug}/`} class="block" aria-label={`Ver el caso de ${item.name}`}>
+    <BrowserFrame src={item.image} alt={`Portada de la web de ${item.name}`} url={item.url} class="transition-transform duration-300 group-hover:-translate-y-1" />
+  </a>
+  <div class="mt-5 flex flex-col flex-1">
+    <p class="text-sm font-semibold text-accent">{item.sector} · {item.place}</p>
+    <h3 class="mt-1 text-xl font-bold text-ink">
+      <a href={`/casos/${item.slug}/`} class="hover:text-accent-dark transition-colors">{item.name}</a>
+    </h3>
+    <p class="mt-2 text-ink-soft leading-relaxed">{item.shortDesc}</p>
+    <dl class="mt-auto pt-4 grid grid-cols-3 gap-3">
+      {item.facts.map((f) => (
+        <div>
+          <dt class="sr-only">{f.label}</dt>
+          <dd class="text-2xl font-bold text-ink">{f.value}</dd>
+          <dd class="text-xs text-ink-soft leading-snug">{f.label}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</article>

@@ -1,0 +1,57 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BrowserFrame from '../../components/BrowserFrame.astro';
+import CaseCard from '../../components/CaseCard.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { site } from '../../config/site.config';
+
+const title = `Casos: webs para oficios en producción | ${site.name}`;
+const description =
+  'Webs reales para empresas de tejados, impermeabilización y fontanería publicadas en Vitoria, Benidorm y Las Palmas: qué se construyó y qué decisiones se tomaron.';
+---
+
+<PageLayout title={title} description={description}>
+
+  <section>
+    <div class="section-container pt-10 lg:pt-16 pb-10 max-w-3xl">
+      <p class="eyebrow mb-4">Casos</p>
+      <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-ink">Webs publicadas para negocios reales</h1>
+      <p class="mt-6 text-lg text-ink-soft leading-relaxed">
+        Solo aparecen webs en producción. Las cifras de visitas y llamadas se añadirán cuando se puedan comprobar y el
+        negocio dé permiso para enseñarlas.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-16 lg:pb-24">
+    <div class="section-container grid gap-14 md:grid-cols-2 lg:grid-cols-3">
+      {site.cases.map((c) => <CaseCard item={c} />)}
+    </div>
+  </section>
+
+  <section class="section-padding bg-cream-dark">
+    <div class="section-container">
+      <p class="eyebrow mb-3">Otros proyectos a medida</p>
+      <h2 class="text-3xl font-bold text-ink leading-tight max-w-2xl">Cuando un negocio necesita algo más que una web de oficio</h2>
+      <div class="mt-10 grid gap-10 md:grid-cols-2">
+        {site.otherWork.map((w) => (
+          <article>
+            {w.image ? (
+              <BrowserFrame src={w.image} alt={`Portada de ${w.name}`} url={w.url} />
+            ) : (
+              <div class="frame aspect-[16/10] flex items-center justify-center bg-cream">
+                <p class="text-ink-soft text-sm">Prototipo privado</p>
+              </div>
+            )}
+            <h3 class="mt-5 text-xl font-bold text-ink">{w.name}</h3>
+            <p class="mt-2 text-ink-soft leading-relaxed">{w.desc}</p>
+            {w.url && <a href={w.url} target="_blank" rel="noopener noreferrer" class="link-cta mt-4">Visitar la web ↗</a>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+
+</PageLayout>

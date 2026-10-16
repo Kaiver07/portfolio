@@ -1,0 +1,28 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  url?: string;
+  eager?: boolean;
+  class?: string;
+}
+
+const { src, alt, url, eager = false, class: className } = Astro.props;
+const host = url ? new URL(url).host : '';
+---
+
+<figure class:list={['frame', className]}>
+  <div class="frame-bar" aria-hidden="true">
+    <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+    {host && <span class="frame-url">{host}</span>}
+  </div>
+  <img
+    src={src}
+    alt={alt}
+    width="1200"
+    height="750"
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    class="block w-full h-auto"
+  />
+</figure>

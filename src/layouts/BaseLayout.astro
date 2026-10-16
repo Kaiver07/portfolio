@@ -21,17 +21,34 @@ const ogImageURL = new URL(ogImage, Astro.site);
 
 const personSchema = {
   '@context': 'https://schema.org',
-  '@type': site.schemaType,
+  '@type': 'Person',
   '@id': `${Astro.site}#person`,
   name: site.name,
   url: Astro.site?.toString(),
   email: site.email,
   sameAs: [site.linkedin, site.github],
-  jobTitle: 'Desarrollador web · SEO técnico · IA · Email marketing',
+  jobTitle: site.role,
+};
+
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${Astro.site}#negocio`,
+  name: `${site.name} · ${site.role}`,
+  url: Astro.site?.toString(),
+  email: site.email,
+  founder: { '@id': `${Astro.site}#person` },
+  areaServed: { '@type': 'Country', name: 'España' },
+  knowsAbout: ['SEO local', 'Diseño web', 'Google Business Profile', 'Astro'],
+  makesOffer: site.services.map((s) => ({
+    '@type': 'Offer',
+    itemOffered: { '@type': 'Service', name: s.name, description: s.summary },
+  })),
 };
 
 const schemas = [
   personSchema,
+  businessSchema,
   ...(schema ? (Array.isArray(schema) ? schema : [schema]) : []),
 ];
 ---
@@ -66,12 +83,12 @@ const schemas = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- JSON-LD Schemas -->
-    <script type="application/ld+json" set:html={JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemas)} />
 
     <!-- Vercel Analytics (visitas básicas, plan gratuito) -->
     <script defer src="/_vercel/insights/script.js"></script>
   </head>
-  <body class="font-sans antialiased text-gray-800 bg-white">
+  <body class="font-sans antialiased">
     <slot />
   </body>
 </html>

@@ -1,0 +1,24 @@
+---
+interface Props {
+  title?: string;
+  text?: string;
+}
+
+const {
+  title = '¿Tu web no te trae llamadas?',
+  text = 'Te hago una auditoría gratis de tu web y tu ficha de Google en tu ciudad. Te digo qué falla y qué haría, aunque luego no trabajemos juntos.',
+} = Astro.props;
+---
+
+<section class="bg-ink text-cream">
+  <div class="section-container py-16 lg:py-20 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl lg:text-4xl font-bold leading-tight">{title}</h2>
+      <p class="mt-4 text-lg text-cream/70 leading-relaxed">{text}</p>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <a href="/auditoria-gratis/" class="btn-cta text-base">Pedir auditoría gratis</a>
+      <a href="/servicios/" class="inline-flex items-center justify-center px-6 py-3 rounded-full border-2 border-cream/25 font-semibold hover:border-cream transition-colors">Ver precios</a>
+    </div>
+  </div>
+</section>

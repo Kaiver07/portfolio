@@ -1,0 +1,146 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import BrowserFrame from '../components/BrowserFrame.astro';
+import CaseCard from '../components/CaseCard.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { site, type Vertical } from '../config/site.config';
+
+export function getStaticPaths() {
+  return site.verticals.map((v) => ({ params: { vertical: v.slug }, props: { v } }));
+}
+
+const { v } = Astro.props as { v: Vertical };
+const cases = site.cases.filter((c) => c.vertical === v.slug);
+const upcoming = site.upcoming.filter((u) =>
+  v.slug === 'webs-para-empresas-de-tejados' ? u.sector === 'Tejados' :
+  v.slug === 'webs-para-pavimentos-y-hormigon-impreso' ? u.sector !== 'Tejados' : false,
+);
+const lead = cases[0];
+const base = Astro.site?.toString() ?? '';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Páginas web para ${v.trade}`,
+    serviceType: 'Diseño web y SEO local',
+    description: v.description,
+    provider: { '@id': `${base}#person` },
+    areaServed: { '@type': 'Country', name: 'España' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: v.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: base },
+      { '@type': 'ListItem', position: 2, name: `Webs para ${v.trade}`, item: `${base}${v.slug}/` },
+    ],
+  },
+];
+---
+
+<PageLayout title={v.title} description={v.description} schema={schema}>
+
+  <section>
+    <div class="section-container pt-10 lg:pt-16 pb-14 lg:pb-20 grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+      <div>
+        <nav class="text-sm text-ink-soft mb-6" aria-label="Migas de pan">
+          <a href="/" class="hover:text-ink">Inicio</a> <span aria-hidden="true">/</span> <span>{v.navLabel}</span>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.1] tracking-tight text-ink">{v.h1}</h1>
+        <p class="mt-6 text-lg text-ink-soft leading-relaxed max-w-xl">{v.intro}</p>
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <a href="/auditoria-gratis/" class="btn-cta">Pedir auditoría gratis</a>
+          <a href="/servicios/" class="link-cta">Ver precios →</a>
+        </div>
+      </div>
+      <div>
+        {lead ? (
+          <BrowserFrame src={lead.image} alt={`Portada de ${lead.name}`} url={lead.url} eager />
+        ) : (
+          <div class="card p-8 bg-cream-dark">
+            <p class="eyebrow">Webs en preparación</p>
+            <ul class="mt-4 space-y-3">
+              {upcoming.map((u) => (
+                <li class="flex items-center justify-between gap-4 hairline pt-3 first:border-0 first:pt-0">
+                  <span class="font-bold text-ink">{u.sector}</span>
+                  <span class="text-ink-soft">{u.place}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-6 text-sm text-ink-soft leading-relaxed">Misma plantilla que las webs de tejados e impermeabilización que ya están en producción.</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-cream-dark">
+    <div class="section-container">
+      <p class="eyebrow mb-3">Lo que suele fallar</p>
+      <h2 class="text-3xl font-bold text-ink leading-tight max-w-2xl">Por qué la web de muchas {v.trade} no trae trabajo</h2>
+      <div class="mt-10 grid gap-4 lg:grid-cols-3">
+        {v.pains.map((p) => (
+          <div class="card p-6">
+            <h3 class="font-bold text-ink text-lg">{p.title}</h3>
+            <p class="mt-2 text-ink-soft leading-relaxed">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="section-container grid gap-12 lg:grid-cols-2">
+      <div>
+        <p class="eyebrow mb-3">Estructura</p>
+        <h2 class="text-3xl font-bold text-ink leading-tight">Las páginas que tendría tu web</h2>
+        <p class="mt-4 text-ink-soft leading-relaxed">
+          Cada página apunta a una búsqueda concreta de tus clientes. Se crean con los servicios y las zonas que trabajas
+          de verdad, no con una lista genérica.
+        </p>
+        <ul class="check-list mt-6 space-y-3 text-ink">
+          {v.pages.map((p) => <li>{p}</li>)}
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow mb-3">Preguntas frecuentes</p>
+        <Faq items={v.faqs} />
+      </div>
+    </div>
+  </section>
+
+  {cases.length > 0 && (
+    <section class="section-padding bg-cream-dark">
+      <div class="section-container">
+        <p class="eyebrow mb-3">Caso real</p>
+        <h2 class="text-3xl font-bold text-ink leading-tight">Una web así, ya publicada</h2>
+        <div class="mt-10 grid gap-12 md:grid-cols-2">
+          {cases.map((c) => <CaseCard item={c} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section-padding">
+    <div class="section-container">
+      <p class="eyebrow mb-3">Otros oficios</p>
+      <div class="flex flex-wrap gap-3">
+        {site.verticals.filter((o) => o.slug !== v.slug).map((o) => (
+          <a href={`/${o.slug}/`} class="rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold text-ink hover:border-accent hover:text-accent-dark">
+            Webs para {o.trade}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand title={`¿Tienes una empresa de ${v.navLabel.toLowerCase()}?`} />
+
+</PageLayout>

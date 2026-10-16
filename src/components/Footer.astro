@@ -3,18 +3,36 @@ import { site } from '../config/site.config';
 const year = new Date().getFullYear();
 ---
 
-<footer class="hairline">
-  <div class="section-container py-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-    <div class="text-sm text-ink-soft">
-      <p>© {year} {site.name} · <a href={`mailto:${site.email}`} class="hover:text-ink transition-colors">{site.email}</a></p>
+<footer class="bg-cream-dark">
+  <div class="section-container py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+    <div class="lg:col-span-2 max-w-sm">
+      <p class="font-bold text-ink">{site.name}</p>
+      <p class="mt-2 text-ink-soft leading-relaxed">
+        Webs y SEO local para empresas de tejados, impermeabilización, pavimentos, fontanería y reformas. Sin reseñas
+        falsas ni cifras que no se puedan comprobar.
+      </p>
+      <a href={`mailto:${site.email}`} class="mt-4 inline-block font-semibold text-ink hover:text-accent-dark">{site.email}</a>
     </div>
 
-    <nav class="flex items-center gap-5 text-sm text-ink-soft" aria-label="Enlaces">
-      <a href="/#servicios" class="hover:text-ink transition-colors">Servicios</a>
-      <a href="/#proyecto" class="hover:text-ink transition-colors">Proyecto</a>
-      <a href="/contacto/" class="hover:text-ink transition-colors">Contacto</a>
-      <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-ink transition-colors">LinkedIn</a>
-      <a href={site.github} target="_blank" rel="noopener noreferrer" class="hover:text-ink transition-colors">GitHub</a>
+    <nav aria-label="Oficios">
+      <p class="eyebrow mb-3">Oficios</p>
+      <ul class="space-y-2">
+        {site.verticals.map((v) => (
+          <li><a href={`/${v.slug}/`} class="text-ink-soft hover:text-ink">{v.navLabel}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav aria-label="Enlaces">
+      <p class="eyebrow mb-3">Más</p>
+      <ul class="space-y-2">
+        <li><a href="/casos/" class="text-ink-soft hover:text-ink">Casos</a></li>
+        <li><a href="/servicios/" class="text-ink-soft hover:text-ink">Servicios y precios</a></li>
+        <li><a href="/como-trabajo/" class="text-ink-soft hover:text-ink">Cómo trabajo</a></li>
+        <li><a href="/auditoria-gratis/" class="text-ink-soft hover:text-ink">Auditoría gratis</a></li>
+        <li><a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="text-ink-soft hover:text-ink">LinkedIn</a></li>
+      </ul>
     </nav>
   </div>
+  <div class="section-container pb-8 text-xs text-ink-soft">© {year} {site.name}</div>
 </footer>
