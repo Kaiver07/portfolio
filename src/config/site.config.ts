@@ -4,14 +4,11 @@
 // Regla: ningún dato que no se pueda comprobar en el repo de cada web.
 // ============================================================
 
-export interface Service {
+export interface Extra {
   slug: string;
   name: string;
   summary: string;
   includes: string[];
-  // PROPUESTA de precio: confirmar antes de publicar en el dominio definitivo.
-  price: string;
-  priceNote: string;
 }
 
 export interface Case {
@@ -47,17 +44,15 @@ export interface Vertical {
 export const site = {
   name: 'Yerai Jiménez',
   role: 'Webs y SEO local para oficios',
-  // PENDIENTE: el nombre aparece como «Yeray» en LinkedIn y en el email.
-  // Conviene usar una sola forma en todas partes (también en Google).
   email: 'yerayjimeenez07@gmail.com',
   linkedin: 'https://www.linkedin.com/in/yeray-jimenez0770/',
   github: 'https://github.com/Kaiver07',
   locale: 'es_ES',
   lang: 'es',
 
-  defaultTitle: 'Páginas web para empresas de tejados, reformas y pavimentos | Yerai Jiménez',
+  defaultTitle: 'Clientes desde Google para empresas de tejados, reformas y pavimentos | Yerai Jiménez',
   defaultDescription:
-    'Hago webs para oficios que salen en Google en su ciudad y traen llamadas: una página por servicio y por localidad, blog automático revisado y ficha de Google bien enlazada. Webs reales en producción.',
+    'Webs que ya salen en Google en tu ciudad, en exclusiva para un solo negocio por oficio y zona. Tú recibes las llamadas y pagas una cuota al mes, sin inversión inicial.',
   defaultOgImage: '/og-default.jpg',
 
   // Cifras de la home: sumas de los tres casos de oficios en producción.
@@ -246,7 +241,7 @@ export const site = {
         },
         {
           q: '¿La web es mía?',
-          a: 'Depende de la modalidad: si la compras, el dominio y la web son tuyos. Si la alquilas, pagas al mes sin inversión inicial, con una permanencia mínima que se acuerda por escrito antes de empezar.',
+          a: 'Hay dos modalidades. En exclusiva, la web es mía, tú la usas en tu zona y pagas una cuota al mes sin inversión inicial. En propiedad, la web y el dominio son tuyos desde el primer día.',
         },
       ],
     },
@@ -378,36 +373,109 @@ export const site = {
   ],
 
   // ============================================================
-  // SERVICIOS Y PRECIOS
-  // PROPUESTA: precios orientativos, confirmar antes de publicar.
+  // LA OFERTA: clientes en tu zona (web en exclusiva por oficio y ciudad).
+  // Sin precios publicados: la cuota depende del oficio y la ciudad.
   // ============================================================
-  services: [
+  offer: {
+    name: 'Clientes en tu zona',
+    summary:
+      'Hago y posiciono una web para un oficio en una ciudad, y se la cedo a un solo negocio de esa zona. Las llamadas y los presupuestos te llegan a ti. Tú pagas una cuota al mes, sin inversión inicial.',
+    steps: [
+      {
+        title: 'Me dices tu oficio y tu ciudad',
+        text: 'Compruebo si la zona está libre. Solo trabajo con un negocio por oficio y zona, así que si ya hay alguien, te lo digo.',
+      },
+      {
+        title: 'Pongo la web a tu nombre',
+        text: 'Con tu teléfono, tu WhatsApp, tus servicios, tus fotos y tu ficha de Google. Si la web de tu zona aún no existe, la monto desde una plantilla probada en producción.',
+      },
+      {
+        title: 'Te llegan las llamadas',
+        text: 'Directamente a ti: llamada, WhatsApp o formulario de presupuesto. Sin intermediarios ni comisiones por trabajo.',
+      },
+      {
+        title: 'Cada mes, lo que ha pasado',
+        text: 'Yo me encargo de que la web siga subiendo en Google: blog semanal, revisión de lo que indexa y un resumen mensual en lenguaje claro.',
+      },
+    ],
+    includes: [
+      'Web con una página por servicio y por localidad',
+      'Tu teléfono, tu WhatsApp y formulario de presupuesto',
+      'Exclusiva de tu oficio en tu zona',
+      'Blog semanal revisado antes de publicar',
+      'Seguimiento semanal en Google Search Console',
+      'Resumen mensual de lo que ha pasado',
+    ],
+    priceText:
+      'Cuota mensual según tu oficio y tu ciudad: no es lo mismo un tejado en una capital que en un pueblo. Te la digo antes de empezar, por escrito.',
+    // Comparación con contratar una web a una agencia. Solo hechos del modelo.
+    comparison: [
+      { label: 'Pago al empezar', agency: 'Sí, la web se paga antes de que traiga nada', me: 'No: cuota al mes' },
+      { label: 'Quién se ocupa de Google', agency: 'Tú, o lo pagas aparte', me: 'Yo, incluido' },
+      { label: 'Tu competencia en la zona', agency: 'Puede contratar lo mismo', me: 'Un solo negocio por oficio y zona' },
+      { label: 'Si no te compensa', agency: 'La inversión ya está hecha', me: 'Lo dejas al final de la permanencia acordada' },
+    ],
+    faqs: [
+      {
+        q: '¿Cuánto cuesta?',
+        a: 'Depende del oficio y de la ciudad: cuánta competencia hay y cuánto vale un trabajo medio. Te digo la cuota antes de empezar, por escrito, y no hay inversión inicial.',
+      },
+      {
+        q: '¿Por qué solo un negocio por zona?',
+        a: 'Porque si diera la misma web a dos empresas del mismo oficio en la misma ciudad, competiría contra mí mismo y ninguna de las dos saldría ganando.',
+      },
+      {
+        q: '¿La web es mía?',
+        a: 'En esta modalidad, la web y el dominio son míos y tú los usas en exclusiva mientras dure el acuerdo. Tu teléfono, tu ficha de Google y tus clientes son siempre tuyos. Si prefieres una web en propiedad, también la hago.',
+      },
+      {
+        q: '¿Qué pasa si lo dejo?',
+        a: 'Al terminar la permanencia acordada puedes dejarlo. La web deja de llevar tus datos y la zona vuelve a quedar libre para otro negocio.',
+      },
+      {
+        q: '¿Me garantizas salir el primero en Google?',
+        a: 'No, y desconfía de quien te lo garantice: depende de tu competencia, de tu ficha y de tus reseñas. Lo que sí te garantizo es una web bien hecha, datos reales y un resumen mensual de lo que pasa.',
+      },
+      {
+        q: '¿Y si ya tengo web?',
+        a: 'Puedes quedártela. Antes de nada te digo gratis cómo estás hoy en Google en tu ciudad y si te compensa una web en exclusiva o mejorar la tuya.',
+      },
+    ],
+  },
+
+  // En qué se diferencia de otras ofertas de webs en alquiler o de leads.
+  // Solo cosas que se cumplen en las webs publicadas.
+  differentiators: [
     {
-      slug: 'web-propia',
-      name: 'Web para tu negocio',
-      summary: 'La web es tuya: dominio, textos y fotos. Pagas una vez y luego un mantenimiento pequeño.',
+      title: 'La ficha de Google es tuya',
+      text: 'La web se enlaza a tu propia ficha de empresa. No alquilo fichas de Google ni creo negocios falsos en Maps: va contra las normas de Google y te puede dejar sin nada.',
+    },
+    {
+      title: 'Webs reales que puedes visitar',
+      text: 'Las webs que enseño están publicadas, con el nombre del negocio que las usa. Nada de ejemplos inventados.',
+    },
+    {
+      title: 'Los contactos son solo tuyos',
+      text: 'No reparto el mismo presupuesto entre varios profesionales como los portales de reformas: lo que llega por tu web te llega a ti.',
+    },
+    {
+      title: 'Sin trampas para subir en Google',
+      text: 'Ni reseñas inventadas ni cifras sin respaldo. Lo que hace subir la web es contenido propio por servicio y por localidad.',
+    },
+  ],
+
+  // Servicios complementarios, para quien no busca la exclusiva.
+  extras: [
+    {
+      slug: 'web-en-propiedad',
+      name: 'Web en propiedad',
+      summary: 'Para quien prefiere que la web y el dominio sean suyos desde el primer día. Misma plantilla, mismo SEO.',
       includes: [
         'Una página por servicio y por localidad',
         'Formulario de presupuesto, llamada y WhatsApp',
-        'Datos estructurados, mapa del sitio y velocidad',
         'Correo con tu dominio',
-        'Aviso legal, privacidad y cookies',
+        'Seguimiento mensual opcional',
       ],
-      price: 'desde 900 €',
-      priceNote: '+ 40 €/mes de alojamiento y mantenimiento',
-    },
-    {
-      slug: 'web-en-alquiler',
-      name: 'Web en alquiler',
-      summary: 'Sin inversión inicial: uso una web que posiciona en tu zona y tú pagas al mes mientras te traiga trabajo. Un solo negocio por oficio y zona.',
-      includes: [
-        'Todo lo de la web propia',
-        'Exclusiva de tu oficio en tu zona',
-        'Blog semanal incluido',
-        'Permanencia mínima corta, por escrito',
-      ],
-      price: 'desde 250 €/mes',
-      priceNote: 'según oficio y ciudad',
     },
     {
       slug: 'ficha-de-google',
@@ -417,33 +485,18 @@ export const site = {
         'Categorías, servicios y zonas revisados',
         'Fotos y descripción',
         'Enlace y QR para pedir reseñas reales',
-        'Coherencia de nombre, dirección y teléfono',
+        'Nombre, dirección y teléfono iguales en todas partes',
       ],
-      price: 'desde 200 €',
-      priceNote: 'pago único',
     },
-    {
-      slug: 'seo-mensual',
-      name: 'SEO mensual',
-      summary: 'Para webs ya publicadas: blog semanal, revisión de lo que Google indexa y un informe mensual en lenguaje claro.',
-      includes: [
-        'Un artículo a la semana, revisado antes de publicar',
-        'Control de páginas indexadas',
-        'Informe mensual con 3 acciones como mucho',
-        'Ajustes de títulos y textos según búsquedas reales',
-      ],
-      price: 'desde 150 €/mes',
-      priceNote: 'sin permanencia',
-    },
-  ] satisfies Service[],
+  ] satisfies Extra[],
 
   // ============================================================
   // CÓMO TRABAJO
   // ============================================================
   process: [
     {
-      title: 'Auditoría gratis',
-      text: 'Miro tu web (si tienes), tu ficha de Google y a tu competencia en tu ciudad. Te digo qué falla y qué haría, aunque no trabajemos juntos.',
+      title: 'Consulta gratis',
+      text: 'Me dices tu oficio y tu ciudad. Te digo si la zona está libre y, de paso, cómo estás hoy en Google frente a tu competencia, aunque no trabajemos juntos.',
     },
     {
       title: 'Datos reales',

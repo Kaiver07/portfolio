@@ -1,0 +1,65 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { site } from '../config/site.config';
+
+const title = `¿Está libre tu zona? Consulta gratis | ${site.name}`;
+const description =
+  'Dime tu oficio y tu ciudad: te digo si la zona está libre para una web en exclusiva y cómo estás hoy en Google frente a tu competencia. Gratis y sin compromiso.';
+
+const subject = 'Consulta de zona';
+const body = [
+  'Hola Yerai, quiero saber si mi zona está libre.',
+  '',
+  'Oficio:',
+  'Ciudad y pueblos donde trabajo:',
+  'Nombre del negocio:',
+  'Web (si tengo):',
+  'Enlace a mi ficha de Google (si tengo):',
+  'Teléfono de contacto:',
+].join('\n');
+const mailto = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+const checks = [
+  'Si tu oficio en tu ciudad está libre o ya hay un negocio con la exclusiva',
+  'Si sales hoy en Google cuando buscan tu servicio en tu ciudad y en los pueblos de alrededor',
+  'Cómo está tu ficha de Google: categorías, fotos, reseñas y enlace a la web',
+  'Qué hace tu competencia directa',
+  'Qué te propondría, aunque luego no trabajemos juntos',
+];
+---
+
+<PageLayout title={title} description={description}>
+
+  <section>
+    <div class="section-container pt-10 lg:pt-16 pb-16 lg:pb-24 grid gap-12 lg:grid-cols-[1.1fr_1fr]">
+      <div>
+        <p class="eyebrow mb-4">Consulta gratis</p>
+        <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-ink">¿Está libre tu zona?</h1>
+        <p class="mt-6 text-lg text-ink-soft leading-relaxed max-w-xl">
+          Solo trabajo con un negocio por oficio y zona. Dime a qué te dedicas y dónde, y te contesto con lo que veo, en
+          lenguaje claro y sin compromiso.
+        </p>
+        <h2 class="mt-10 font-bold text-ink text-lg">Qué te digo</h2>
+        <ul class="check-list mt-4 space-y-3 text-ink">
+          {checks.map((c) => <li>{c}</li>)}
+        </ul>
+      </div>
+
+      <div class="card p-7 lg:p-8 bg-cream-dark self-start">
+        <h2 class="text-xl font-bold text-ink">Pregúntame por email</h2>
+        <p class="mt-2 text-ink-soft leading-relaxed">
+          El botón abre tu correo con lo que necesito ya escrito. Solo tienes que rellenarlo.
+        </p>
+        <a href={mailto} class="btn-cta w-full mt-6 text-base">Consultar mi zona</a>
+        <p class="mt-4 text-sm text-ink-soft">
+          ¿Prefieres escribir tú? <a href={`mailto:${site.email}`} class="font-semibold text-ink underline">{site.email}</a>
+        </p>
+        <div class="mt-8 hairline pt-6 text-sm text-ink-soft space-y-2">
+          <p><span class="font-semibold text-ink">Necesito:</span> oficio, ciudad y, si los tienes, tu web y tu ficha de Google.</p>
+          <p><span class="font-semibold text-ink">Te contesto:</span> por email, por escrito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

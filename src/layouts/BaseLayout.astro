@@ -40,7 +40,10 @@ const businessSchema = {
   founder: { '@id': `${Astro.site}#person` },
   areaServed: { '@type': 'Country', name: 'España' },
   knowsAbout: ['SEO local', 'Diseño web', 'Google Business Profile', 'Astro'],
-  makesOffer: site.services.map((s) => ({
+  makesOffer: [
+    { name: site.offer.name, summary: site.offer.summary },
+    ...site.extras.map((e) => ({ name: e.name, summary: e.summary })),
+  ].map((s) => ({
     '@type': 'Offer',
     itemOffered: { '@type': 'Service', name: s.name, description: s.summary },
   })),

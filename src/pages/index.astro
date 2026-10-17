@@ -23,19 +23,19 @@ const included = [
   <section class="overflow-hidden">
     <div class="section-container pt-12 lg:pt-20 pb-16 lg:pb-24 grid gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center">
       <div>
-        <p class="eyebrow mb-6">Webs y SEO local para oficios</p>
+        <p class="eyebrow mb-6">Para empresas de tejados, reformas y pavimentos</p>
         <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.08] tracking-tight text-ink">
-          Webs que traen <span class="text-accent">llamadas</span> a empresas de tejados, reformas y pavimentos.
+          Clientes de tu zona <span class="text-accent">llamándote a ti</span>, no a tu competencia.
         </h1>
         <p class="mt-6 text-lg text-ink-soft leading-relaxed max-w-xl">
-          Soy Yerai. Hago webs para oficios que salen en Google cuando alguien busca tu servicio en tu ciudad, con
-          una página por servicio y por localidad, tu ficha de Google bien enlazada y un blog que se escribe solo.
+          Soy Yerai. Hago webs que salen en Google para un oficio en una ciudad y se las cedo a un solo negocio de esa
+          zona. Tú recibes las llamadas y pagas una cuota al mes, sin inversión inicial.
         </p>
         <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
-          <a href="/auditoria-gratis/" class="btn-cta text-base">Pedir auditoría gratis</a>
-          <a href="/casos/" class="link-cta">Ver webs publicadas →</a>
+          <a href="/consulta-tu-zona/" class="btn-cta text-base">¿Está libre tu zona?</a>
+          <a href="/como-funciona/" class="link-cta">Cómo funciona →</a>
         </div>
-        <p class="mt-6 text-sm text-ink-soft">Sin reseñas falsas ni cifras que no se puedan comprobar.</p>
+        <p class="mt-6 text-sm text-ink-soft">Un solo negocio por oficio y zona. Sin reseñas falsas ni fichas de Google alquiladas.</p>
       </div>
 
       <div class="relative lg:pl-6">
@@ -179,25 +179,35 @@ const included = [
     </div>
   </section>
 
-  <!-- ======================== SERVICIOS ======================== -->
+  <!-- ======================== CÓMO FUNCIONA ======================== -->
   <section class="section-padding bg-cream-dark">
     <div class="section-container">
       <div class="flex flex-wrap items-end justify-between gap-4">
         <div class="max-w-2xl">
-          <p class="eyebrow mb-3">Servicios</p>
-          <h2 class="text-3xl lg:text-4xl font-bold text-ink leading-tight">Compra la web o alquílala</h2>
+          <p class="eyebrow mb-3">Cómo funciona</p>
+          <h2 class="text-3xl lg:text-4xl font-bold text-ink leading-tight">No te vendo una web. Te cedo una que trae clientes.</h2>
         </div>
-        <a href="/servicios/" class="link-cta">Detalles y precios →</a>
+        <a href="/como-funciona/" class="link-cta">Todos los detalles →</a>
       </div>
-      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {site.services.map((s) => (
-          <a href={`/servicios/#${s.slug}`} class="card p-6 flex flex-col hover:border-accent transition-colors">
-            <h3 class="text-lg font-bold text-ink">{s.name}</h3>
-            <p class="mt-2 text-ink-soft leading-relaxed flex-1">{s.summary}</p>
-            <p class="mt-5 text-2xl font-extrabold text-ink">{s.price}</p>
-            <p class="text-sm text-ink-soft">{s.priceNote}</p>
-          </a>
+      <ol class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {site.offer.steps.map((p, i) => (
+          <li>
+            <span class="flex w-9 h-9 items-center justify-center rounded-full bg-accent text-cream font-bold">{i + 1}</span>
+            <h3 class="mt-4 text-lg font-bold text-ink">{p.title}</h3>
+            <p class="mt-2 text-ink-soft leading-relaxed">{p.text}</p>
+          </li>
         ))}
+      </ol>
+      <div class="mt-14">
+        <h3 class="text-xl font-bold text-ink">En qué me diferencio de otros que alquilan webs o venden contactos</h3>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {site.differentiators.map((d) => (
+            <div class="card p-6">
+              <p class="font-bold text-ink">{d.title}</p>
+              <p class="mt-2 text-sm text-ink-soft leading-relaxed">{d.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>

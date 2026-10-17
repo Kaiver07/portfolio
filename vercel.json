@@ -4,7 +4,35 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "redirects": [
-    { "source": "/proyectos/tejados-vitoria/", "destination": "/casos/tejados-vitoria/", "permanent": true },
-    { "source": "/proyectos/tejados-vitoria", "destination": "/casos/tejados-vitoria/", "permanent": true }
+    {
+      "source": "/proyectos/tejados-vitoria/",
+      "destination": "/casos/tejados-vitoria/",
+      "permanent": true
+    },
+    {
+      "source": "/proyectos/tejados-vitoria",
+      "destination": "/casos/tejados-vitoria/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/",
+      "destination": "/como-funciona/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios",
+      "destination": "/como-funciona/",
+      "permanent": true
+    },
+    {
+      "source": "/auditoria-gratis/",
+      "destination": "/consulta-tu-zona/",
+      "permanent": true
+    },
+    {
+      "source": "/auditoria-gratis",
+      "destination": "/consulta-tu-zona/",
+      "permanent": true
+    }
   ]
 }

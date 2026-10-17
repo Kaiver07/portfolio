@@ -3,8 +3,8 @@ import { site } from '../config/site.config';
 
 const navLinks = [
   { label: 'Casos', href: '/casos/' },
-  { label: 'Servicios y precios', href: '/servicios/' },
-  { label: 'Cómo trabajo', href: '/como-trabajo/' },
+  { label: 'Cómo funciona', href: '/como-funciona/' },
+  { label: 'Sobre mí', href: '/como-trabajo/' },
   { label: 'Contacto', href: '/contacto/' },
 ];
 ---
@@ -40,7 +40,7 @@ const navLinks = [
       </nav>
 
       <div class="flex items-center gap-3 flex-shrink-0">
-        <a href="/auditoria-gratis/" class="hidden sm:inline-flex btn-cta !px-5 !py-2.5 text-sm">Auditoría gratis</a>
+        <a href="/consulta-tu-zona/" class="hidden sm:inline-flex btn-cta !px-5 !py-2.5 text-sm">¿Está libre tu zona?</a>
         <button
           id="menu-toggle"
           type="button"
@@ -70,7 +70,7 @@ const navLinks = [
       {navLinks.map((l) => (
         <a href={l.href} class="text-ink text-lg font-semibold px-2 py-4 border-b border-ink/10">{l.label}</a>
       ))}
-      <a href="/auditoria-gratis/" class="btn-cta text-lg py-4 mt-6 justify-center">Pedir auditoría gratis</a>
+      <a href="/consulta-tu-zona/" class="btn-cta text-lg py-4 mt-6 justify-center">¿Está libre tu zona?</a>
     </nav>
   </div>
 </header>
