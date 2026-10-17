@@ -251,7 +251,7 @@ export const site = {
 
   // ============================================================
   // CASOS (solo webs en producción).
-  // PENDIENTE: confirmar con cada negocio que acepta salir aquí.
+  // Cada negocio ha dado permiso para salir aquí (confirmado por Yerai, 17/10/2026).
   // ============================================================
   cases: [
     {
@@ -444,7 +444,7 @@ export const site = {
   ],
 
   // Otros proyectos a medida (no son el servicio principal).
-  // PENDIENTE: confirmar permiso para nombrarlos.
+  // Permiso para nombrarlos confirmado por Yerai (17/10/2026).
   otherWork: [
     {
       name: 'Melero Realty',
