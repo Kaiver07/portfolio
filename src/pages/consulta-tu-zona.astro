@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import ZonesBoard from '../components/ZonesBoard.astro';
 import { site } from '../config/site.config';
 
 const title = `¿Está libre tu zona? Consulta gratis | ${site.name}`;
@@ -43,6 +44,9 @@ const checks = [
         <ul class="check-list mt-4 space-y-3 text-ink">
           {checks.map((c) => <li>{c}</li>)}
         </ul>
+        <div class="mt-10">
+          <ZonesBoard compact />
+        </div>
       </div>
 
       <div class="card p-7 lg:p-8 bg-cream-dark self-start">

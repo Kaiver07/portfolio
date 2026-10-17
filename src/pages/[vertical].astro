@@ -12,11 +12,7 @@ export function getStaticPaths() {
 
 const { v } = Astro.props as { v: Vertical };
 const cases = site.cases.filter((c) => c.vertical === v.slug);
-const upcoming = site.upcoming.filter((u) =>
-  v.slug === 'webs-para-empresas-de-tejados' ? u.sector === 'Tejados' :
-  v.slug === 'webs-para-pavimentos-y-hormigon-impreso' ? u.sector !== 'Tejados' : false,
-);
-const lead = cases[0];
+const lead = cases[0]!;
 const base = Astro.site?.toString() ?? '';
 
 const schema = [
@@ -61,22 +57,7 @@ const schema = [
         </div>
       </div>
       <div>
-        {lead ? (
-          <BrowserFrame src={lead.image} alt={`Portada de ${lead.name}`} url={lead.url} eager />
-        ) : (
-          <div class="card p-8 bg-cream-dark">
-            <p class="eyebrow">Webs en preparación</p>
-            <ul class="mt-4 space-y-3">
-              {upcoming.map((u) => (
-                <li class="flex items-center justify-between gap-4 hairline pt-3 first:border-0 first:pt-0">
-                  <span class="font-bold text-ink">{u.sector}</span>
-                  <span class="text-ink-soft">{u.place}</span>
-                </li>
-              ))}
-            </ul>
-            <p class="mt-6 text-sm text-ink-soft leading-relaxed">Misma plantilla que las webs de tejados e impermeabilización que ya están en producción.</p>
-          </div>
-        )}
+        <BrowserFrame src={lead.image} alt={`Portada de ${lead.name}`} url={lead.url} eager />
       </div>
     </div>
   </section>

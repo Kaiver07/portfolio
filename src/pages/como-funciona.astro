@@ -96,13 +96,27 @@ const schema = {
   </section>
 
   <section class="section-padding">
+    <div class="section-container">
+      <h2 class="text-3xl font-bold text-ink">Lo que no te voy a prometer</h2>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {site.noPromises.map((n) => (
+          <div class="card p-6">
+            <p class="font-bold text-ink"><span class="text-accent mr-1" aria-hidden="true">✕</span> {n.title}</p>
+            <p class="mt-2 text-sm text-ink-soft leading-relaxed">{n.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-cream-dark">
     <div class="section-container max-w-3xl">
       <h2 class="text-3xl font-bold text-ink mb-4">Preguntas frecuentes</h2>
       <Faq items={offer.faqs} />
     </div>
   </section>
 
-  <section class="section-padding bg-cream-dark">
+  <section class="section-padding">
     <div class="section-container">
       <h2 class="text-3xl font-bold text-ink">Si no buscas la exclusiva</h2>
       <div class="mt-10 grid gap-5 md:grid-cols-2">

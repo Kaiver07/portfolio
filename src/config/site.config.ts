@@ -43,7 +43,7 @@ export interface Vertical {
 
 export const site = {
   name: 'Yerai Jiménez',
-  role: 'Webs y SEO local para oficios',
+  role: 'Clientes por Google para oficios',
   email: 'yerayjimeenez07@gmail.com',
   linkedin: 'https://www.linkedin.com/in/yeray-jimenez0770/',
   github: 'https://github.com/Kaiver07',
@@ -55,13 +55,13 @@ export const site = {
     'Webs que ya salen en Google en tu ciudad, en exclusiva para un solo negocio por oficio y zona. Tú recibes las llamadas y pagas una cuota al mes, sin inversión inicial.',
   defaultOgImage: '/og-default.jpg',
 
-  // Cifras de la home: sumas de los tres casos de oficios en producción.
-  // Si cambia un caso, cambian aquí.
+  // Cifras de la home: sumas de los cinco casos de oficios en producción
+  // (contadas en el build de cada web). Si cambia un caso, cambian aquí.
   stats: [
-    { value: '3', label: 'webs de oficios en producción' },
-    { value: '41', label: 'localidades con página propia' },
-    { value: '36', label: 'artículos publicados por el blog automático' },
-    { value: '4', label: 'webs más en preparación' },
+    { value: '5', label: 'webs de oficios en producción' },
+    { value: '66', label: 'localidades con página propia' },
+    { value: '42', label: 'artículos publicados por el blog automático' },
+    { value: '2', label: 'webs más en preparación' },
   ],
 
   // ============================================================
@@ -104,7 +104,7 @@ export const site = {
       faqs: [
         {
           q: '¿Cuánto tarda en estar lista la web?',
-          a: 'La estructura base sale de una plantilla probada en producción, así que lo que más tiempo lleva es reunir tus datos: servicios, zonas, fotos de obras y la ficha de Google. Con eso, la web se monta en días, no en meses.',
+          a: 'La base ya está hecha y funcionando en otras webs, así que lo que más tiempo lleva es reunir tus datos: servicios, zonas, fotos de obras y la ficha de Google. Con eso, la web se monta en días, no en meses.',
         },
         {
           q: '¿Necesito tener fotos de mis trabajos?',
@@ -133,7 +133,7 @@ export const site = {
         },
         {
           title: 'Zonas turísticas con mucha competencia',
-          text: 'Páginas por localidad y por barrio cuando hace falta, con datos estructurados que Google entiende.',
+          text: 'Páginas por localidad y por barrio cuando hace falta, preparadas para que Google entienda dónde trabajas.',
         },
         {
           title: 'Los formularios llegan a un correo que nadie mira',
@@ -172,7 +172,7 @@ export const site = {
       pains: [
         {
           title: 'Tus trabajos no se ven',
-          text: 'Galería de trabajos realizados con fotos optimizadas que cargan rápido también en el móvil.',
+          text: 'Galería de trabajos realizados con fotos que cargan rápido también en el móvil.',
         },
         {
           title: 'Compites con grandes empresas',
@@ -194,7 +194,7 @@ export const site = {
       faqs: [
         {
           q: '¿Tienes alguna web de pavimentos publicada?',
-          a: 'Ahora mismo hay dos en preparación, en Elche y en Marbella, con la misma plantilla que las webs de tejados e impermeabilización que ya están en producción. Las enseñaré como caso cuando estén publicadas, no antes.',
+          a: 'Sí, dos: hormigón impreso en Elche y Alicante, y resina epoxi y microcemento en Marbella y la Costa del Sol. Las dos están en la sección de casos.',
         },
         {
           q: '¿Puedo poner precios por metro?',
@@ -237,7 +237,7 @@ export const site = {
       faqs: [
         {
           q: '¿Y si mañana añado un servicio nuevo?',
-          a: 'Añadir un servicio o una zona es añadir una entrada a la configuración de la web: la página nueva se crea sola con su título, su descripción y sus datos estructurados.',
+          a: 'Añadir un servicio o una zona es añadir una entrada a la configuración de la web: la página nueva se crea sola, lista para que Google la encuentre.',
         },
         {
           q: '¿La web es mía?',
@@ -268,21 +268,21 @@ export const site = {
         { value: '15', label: 'artículos en el blog' },
       ],
       problem:
-        'Una empresa de reparación de tejados en Vitoria-Gasteiz necesitaba presencia en Google desde cero, en un sector donde casi todos los competidores tienen webs antiguas, lentas o sin estructura para posicionar.',
+        'Una empresa de reparación de tejados en Vitoria-Gasteiz necesitaba presencia en Google desde cero, en un sector donde casi todos los competidores tienen webs antiguas, lentas o que Google casi no enseña.',
       built: [
         'Una página por servicio (reparación, retejado, goteras, canalones, claraboyas, aislamiento, fachadas, cubiertas industriales...), cada una con su título, su descripción, su contenido y sus preguntas frecuentes.',
         'Una página por cada localidad de Álava donde trabaja la empresa, escrita para esa zona y no copiada cambiando el nombre.',
-        'Datos estructurados de empresa local (dirección, horario, zonas de servicio) en todas las páginas.',
-        'Imágenes optimizadas y la imagen principal de la portada cambiada a formato optimizado tras detectar que era lo que más tardaba en cargar.',
-        'Blog que publica cada semana un artículo del calendario editorial, con controles antes de publicar: longitud mínima, sin enlaces inventados y bloqueo si algo falla.',
+        'Dirección, horario y zonas de trabajo explicados a Google en todas las páginas.',
+        'Fotos que cargan rápido; la de la portada se cambió al ver que era lo que más tardaba en el móvil.',
+        'Un artículo nuevo cada semana sobre dudas reales de los clientes, revisado antes de publicarse: si algo falla, no sale.',
         'Medición de visitas sin cookies, así que no hace falta banner de consentimiento.',
       ],
       decisions: [
-        'Se descartó marcar reseñas propias con datos estructurados: habría sumado estrellas visibles en Google, pero va contra sus normas.',
+        'Se descartó poner estrellas de reseñas propias en Google: habría quedado bonito, pero va contra sus normas.',
         'Se detectó una contradicción de precios entre dos páginas antes de publicar, revisando la web como lo haría un cliente.',
       ],
       result:
-        'La web está en producción. Cuando haya cifras de Google Search Console que se puedan enseñar (páginas indexadas, impresiones, clics), aparecerán aquí. No antes.',
+        'La web está en producción. Cuando haya cifras de Google que se puedan enseñar (cuánta gente la ve y cuánta entra), aparecerán aquí. No antes.',
     },
     {
       slug: 'impermeabilizaciones-benidorm',
@@ -310,11 +310,11 @@ export const site = {
         'Blog semanal automático con la misma validación que en Vitoria.',
       ],
       decisions: [
-        'Colores sacados del logo del cliente, no de una plantilla.',
+        'Colores sacados del logo del negocio, no de un diseño de serie.',
         'Se quitó Google Analytics y con él el banner de cookies: la medición es sin cookies.',
       ],
       result:
-        'En producción desde agosto de 2026. Las cifras de Search Console se publicarán aquí cuando haya suficientes datos.',
+        'En producción desde agosto de 2026. Las cifras de Google se publicarán aquí cuando haya suficientes datos.',
     },
     {
       slug: 'servicios-generales-manuel',
@@ -336,7 +336,7 @@ export const site = {
       built: [
         'Una página por servicio, con urgencias y teléfono en el título de cada una.',
         'Una página por municipio de Gran Canaria donde trabajan.',
-        'Galería con fotos reales de obras de la empresa, optimizadas automáticamente.',
+        'Galería con fotos reales de obras de la empresa.',
         'Blog semanal automático publicado desde GitHub y avisado a los buscadores al momento.',
       ],
       decisions: [
@@ -345,14 +345,100 @@ export const site = {
       ],
       result: 'En producción. Las cifras se añadirán cuando se puedan comprobar.',
     },
+    {
+      slug: 'resina-epoxi-marbella',
+      name: 'Pavimentos Resina Epoxi Albamar',
+      url: 'https://resinaepoximarbella.es',
+      sector: 'Resina epoxi y microcemento',
+      vertical: 'webs-para-pavimentos-y-hormigon-impreso',
+      place: 'Marbella, Málaga y Costa del Sol',
+      liveSince: 'octubre de 2026',
+      image: '/casos/resina-epoxi-marbella.webp',
+      shortDesc:
+        'Web para un aplicador de resina epoxi y microcemento: 8 servicios, 13 localidades de la Costa del Sol y una página para cada servicio en cada localidad.',
+      facts: [
+        { value: '8', label: 'servicios con página propia' },
+        { value: '13', label: 'localidades de la Costa del Sol' },
+        { value: '104', label: 'páginas de servicio en cada localidad' },
+      ],
+      problem:
+        'Un profesional de suelos de resina y microcemento de Málaga que competía en Google con grandes empresas: casi no había webs de profesionales como él.',
+      built: [
+        'Una página por servicio: suelos decorativos, garajes y parkings, industria alimentaria, naves, microcemento...',
+        'Una página por cada localidad de la Costa del Sol donde trabaja, de Marbella y Estepona a Málaga, Mijas o Vélez-Málaga.',
+        'Una página para cada servicio en cada localidad (104 en total), cada una con su texto y sus preguntas propias, sin copiar cambiando el nombre del pueblo.',
+        'Formulario de presupuesto, llamada y WhatsApp, y correo con su dominio que llega a su buzón.',
+        '100 sobre 100 en la prueba de calidad de Google para móvil (Lighthouse) en las páginas medidas tras la revisión del 6 de octubre.',
+      ],
+      decisions: [
+        'Las reseñas son las de su ficha de Google, copiadas tal cual. Las que no hablaban de su trabajo se dejaron fuera.',
+        'Las fotos de servicio que aún no son suyas están marcadas para cambiarlas en cuanto lleguen las propias.',
+      ],
+      result:
+        'Publicada en octubre de 2026 y dada de alta en Google. Las cifras de Google se publicarán aquí cuando haya suficientes datos.',
+    },
+    {
+      slug: 'hormigon-impreso-elche',
+      name: 'Hormigón y Reformas AC',
+      url: 'https://hormigonimpresoenelche.es',
+      sector: 'Hormigón impreso',
+      vertical: 'webs-para-pavimentos-y-hormigon-impreso',
+      place: 'Elche y Alicante',
+      liveSince: 'septiembre de 2026',
+      image: '/casos/hormigon-impreso-elche.webp',
+      shortDesc:
+        'Web para una empresa de hormigón impreso de Elche: 9 servicios, 12 localidades de Elche y Alicante y presupuesto con visita a la obra.',
+      facts: [
+        { value: '9', label: 'servicios con página propia' },
+        { value: '12', label: 'localidades de Elche y Alicante' },
+        { value: '3', label: 'artículos en el blog' },
+      ],
+      problem:
+        'Una empresa de hormigón impreso de Elche con dos fichas de Google y una web antigua enlazada a una de ellas, sin páginas para cada servicio ni para cada localidad.',
+      built: [
+        'Una página por servicio: hormigón impreso, pulido y vertical, entradas de garaje, piscinas, resinado, desactivado, soleras y microcemento.',
+        'Una página por cada localidad de Elche y Alicante donde trabajan.',
+        'Galería de trabajos, formulario de presupuesto con visita a la obra, llamada y WhatsApp.',
+        'Correo con su dominio que llega a su buzón, comprobado de principio a fin.',
+      ],
+      decisions: [
+        'Sin precios en la web, por decisión del negocio, aunque mucha gente busque el precio por metro.',
+        'El mismo horario en las dos fichas de Google, para que Google no reciba datos que se contradicen.',
+      ],
+      result:
+        'En producción desde finales de septiembre de 2026. Las cifras de Google se publicarán aquí cuando haya suficientes datos.',
+    },
   ] satisfies Case[],
 
-  // Webs en preparación: se enseñan sin nombre ni enlace hasta publicarse.
-  upcoming: [
-    { sector: 'Tejados', place: 'Burgos' },
-    { sector: 'Tejados', place: 'Miranda de Ebro' },
-    { sector: 'Hormigón impreso', place: 'Elche' },
-    { sector: 'Resina epoxi', place: 'Marbella' },
+  // Zonas ocupadas: oficio y ciudad de cada web en exclusiva, sin nombres.
+  // Servicios Generales Manuel no va aquí: es una web propia del negocio.
+  zonesTaken: [
+    { trade: 'Tejados', place: 'Vitoria-Gasteiz y Álava', status: 'Ocupada' },
+    { trade: 'Impermeabilización', place: 'Benidorm y Marina Baixa', status: 'Ocupada' },
+    { trade: 'Resina epoxi y microcemento', place: 'Marbella y Costa del Sol', status: 'Ocupada' },
+    { trade: 'Hormigón impreso', place: 'Elche y Alicante', status: 'Ocupada' },
+    { trade: 'Tejados', place: 'Burgos', status: 'Reservada' },
+    { trade: 'Tejados', place: 'Miranda de Ebro', status: 'Reservada' },
+  ],
+
+  // Lo que no se promete: el contrapunto a quien vende cursos y cifras.
+  noPromises: [
+    {
+      title: 'Salir el primero en Google en dos semanas',
+      text: 'Nadie controla eso. Una web nueva necesita tiempo, y quien te lo garantiza te está vendiendo humo.',
+    },
+    {
+      title: 'Que vas a facturar tanto al mes',
+      text: 'Depende de tu zona, de tus precios y de cómo cojas el teléfono. Te enseño lo que pasa, no lo que me invento.',
+    },
+    {
+      title: 'Cursos ni mentorías',
+      text: 'No te vendo un curso para que montes esto tú. Hago las webs y me encargo de que funcionen.',
+    },
+    {
+      title: 'Reseñas, fichas o negocios falsos',
+      text: 'Ni para ti ni para mí. Es lo primero que Google castiga, y te puede dejar sin la ficha.',
+    },
   ],
 
   // Otros proyectos a medida (no son el servicio principal).
@@ -379,7 +465,7 @@ export const site = {
   offer: {
     name: 'Clientes en tu zona',
     summary:
-      'Hago y posiciono una web para un oficio en una ciudad, y se la cedo a un solo negocio de esa zona. Las llamadas y los presupuestos te llegan a ti. Tú pagas una cuota al mes, sin inversión inicial.',
+      'Hago una web que sale en Google para un oficio en una ciudad, y se la cedo a un solo negocio de esa zona. Las llamadas y los presupuestos te llegan a ti. Tú pagas una cuota al mes, sin inversión inicial.',
     steps: [
       {
         title: 'Me dices tu oficio y tu ciudad',
@@ -387,7 +473,7 @@ export const site = {
       },
       {
         title: 'Pongo la web a tu nombre',
-        text: 'Con tu teléfono, tu WhatsApp, tus servicios, tus fotos y tu ficha de Google. Si la web de tu zona aún no existe, la monto desde una plantilla probada en producción.',
+        text: 'Con tu teléfono, tu WhatsApp, tus servicios, tus fotos y tu ficha de Google. Si la web de tu zona aún no existe, la monto con la misma base que las que ya funcionan.',
       },
       {
         title: 'Te llegan las llamadas',
@@ -395,15 +481,15 @@ export const site = {
       },
       {
         title: 'Cada mes, lo que ha pasado',
-        text: 'Yo me encargo de que la web siga subiendo en Google: blog semanal, revisión de lo que indexa y un resumen mensual en lenguaje claro.',
+        text: 'Yo me encargo de que la web siga subiendo en Google: un artículo nuevo cada semana, revisión de que Google la sigue enseñando y un resumen al mes en lenguaje claro.',
       },
     ],
     includes: [
       'Web con una página por servicio y por localidad',
       'Tu teléfono, tu WhatsApp y formulario de presupuesto',
       'Exclusiva de tu oficio en tu zona',
-      'Blog semanal revisado antes de publicar',
-      'Seguimiento semanal en Google Search Console',
+      'Un artículo nuevo cada semana, revisado antes de publicar',
+      'Revisión semanal de cómo sale en Google',
       'Resumen mensual de lo que ha pasado',
     ],
     priceText:
@@ -469,7 +555,7 @@ export const site = {
     {
       slug: 'web-en-propiedad',
       name: 'Web en propiedad',
-      summary: 'Para quien prefiere que la web y el dominio sean suyos desde el primer día. Misma plantilla, mismo SEO.',
+      summary: 'Para quien prefiere que la web y el dominio sean suyos desde el primer día. Misma base y el mismo trabajo para salir en Google.',
       includes: [
         'Una página por servicio y por localidad',
         'Formulario de presupuesto, llamada y WhatsApp',
@@ -504,11 +590,11 @@ export const site = {
     },
     {
       title: 'Web en días',
-      text: 'Parto de una plantilla probada en producción, así que el tiempo se va en tu contenido, no en reinventar la web.',
+      text: 'La base ya funciona en otras webs, así que el tiempo se va en tus servicios y tus fotos, no en reinventar nada.',
     },
     {
       title: 'Seguimiento',
-      text: 'Cada semana se revisan todas las webs con datos de Google Search Console, y cada mes hay un informe con lo que ha cambiado y lo siguiente que hay que hacer.',
+      text: 'Cada semana reviso cómo sale cada web en Google, y cada mes te mando un resumen con lo que ha cambiado y lo siguiente que voy a hacer.',
     },
   ],
 
@@ -529,16 +615,16 @@ export const site = {
 
   tools: [
     {
-      name: 'Plantilla para oficios',
-      text: 'La base de todas las webs: servicios, zonas y páginas de servicio en cada localidad, generadas desde un solo archivo. Si falta un dato obligatorio, no deja publicar.',
+      name: 'La misma base en todas las webs',
+      text: 'Cada servicio y cada pueblo tiene su página. Y si falta un dato de verdad (teléfono, dirección, horario), la web no se publica con uno inventado.',
     },
     {
-      name: 'Vigilancia SEO semanal',
-      text: 'Cada lunes cruza Google Search Console y las actualizaciones de Google y manda un semáforo por web con, como mucho, 3 acciones.',
+      name: 'Revisión cada lunes',
+      text: 'Cada lunes miro cómo ha ido cada web en Google y si Google ha cambiado algo. Si hay que tocar algo, como mucho tres cosas, y se hacen.',
     },
     {
       name: 'Panel de control',
-      text: 'Todas las webs en un panel: clics, consultas «a tiro», indexación, estado del blog y salud técnica.',
+      text: 'Todas las webs en una pantalla: cuánta gente entra, qué busca, si la web funciona y si el artículo de la semana salió.',
     },
   ],
 };
