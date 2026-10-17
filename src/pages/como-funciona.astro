@@ -5,9 +5,9 @@ import CtaBand from '../components/CtaBand.astro';
 import { site } from '../config/site.config';
 
 const { offer } = site;
-const title = `Cómo funciona: una web que ya sale en Google, en exclusiva para tu zona | ${site.name}`;
+const title = `Cómo funciona: la mejor web de tu zona, con cuota mensual | ${site.name}`;
 const description =
-  'Webs en exclusiva para un negocio por oficio y ciudad: tú recibes las llamadas y pagas una cuota al mes, sin inversión inicial. También webs en propiedad y ficha de Google.';
+  'La web más completa de tu oficio en tu ciudad: tú recibes las llamadas y pagas una cuota al mes, sin inversión inicial. También webs en propiedad y ficha de Google.';
 const base = Astro.site?.toString() ?? '';
 const schema = {
   '@context': 'https://schema.org',
@@ -22,7 +22,7 @@ const schema = {
   <section>
     <div class="section-container pt-10 lg:pt-16 pb-12 max-w-3xl">
       <p class="eyebrow mb-4">Cómo funciona</p>
-      <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-ink">No te vendo una web. Te cedo una que trae clientes de tu zona.</h1>
+      <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-ink">No te vendo una web. Te pongo la mejor de tu zona a trabajar para ti.</h1>
       <p class="mt-6 text-lg text-ink-soft leading-relaxed">{offer.summary}</p>
     </div>
   </section>
@@ -62,7 +62,7 @@ const schema = {
               <tr>
                 <th scope="col" class="p-4 font-semibold text-ink-soft"><span class="sr-only">Aspecto</span></th>
                 <th scope="col" class="p-4 font-semibold text-ink-soft">Web de agencia</th>
-                <th scope="col" class="p-4 font-bold text-ink">En exclusiva conmigo</th>
+                <th scope="col" class="p-4 font-bold text-ink">Conmigo</th>
               </tr>
             </thead>
             <tbody>
@@ -118,7 +118,7 @@ const schema = {
 
   <section class="section-padding">
     <div class="section-container">
-      <h2 class="text-3xl font-bold text-ink">Si no buscas la exclusiva</h2>
+      <h2 class="text-3xl font-bold text-ink">Si prefieres no pagar cuota</h2>
       <div class="mt-10 grid gap-5 md:grid-cols-2">
         {site.extras.map((e) => (
           <article id={e.slug} class="card p-7 scroll-mt-28">

@@ -3,13 +3,13 @@ import PageLayout from '../layouts/PageLayout.astro';
 import ZonesBoard from '../components/ZonesBoard.astro';
 import { site } from '../config/site.config';
 
-const title = `¿Está libre tu zona? Consulta gratis | ${site.name}`;
+const title = `Consulta tu zona gratis: cómo estás en Google frente a tu competencia | ${site.name}`;
 const description =
-  'Dime tu oficio y tu ciudad: te digo si la zona está libre para una web en exclusiva y cómo estás hoy en Google frente a tu competencia. Gratis y sin compromiso.';
+  'Dime tu oficio y tu ciudad: te digo cómo estás hoy en Google frente a tu competencia y qué web haría falta para tener la mejor de tu zona. Gratis y sin compromiso.';
 
 const subject = 'Consulta de zona';
 const body = [
-  'Hola Yerai, quiero saber si mi zona está libre.',
+  'Hola Yerai, quiero saber cómo está mi zona en Google.',
   '',
   'Oficio:',
   'Ciudad y pueblos donde trabajo:',
@@ -21,7 +21,6 @@ const body = [
 const mailto = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
 const checks = [
-  'Si tu oficio en tu ciudad está libre o ya hay un negocio con la exclusiva',
   'Si sales hoy en Google cuando buscan tu servicio en tu ciudad y en los pueblos de alrededor',
   'Cómo está tu ficha de Google: categorías, fotos, reseñas y enlace a la web',
   'Qué hace tu competencia directa',
@@ -35,10 +34,10 @@ const checks = [
     <div class="section-container pt-10 lg:pt-16 pb-16 lg:pb-24 grid gap-12 lg:grid-cols-[1.1fr_1fr]">
       <div>
         <p class="eyebrow mb-4">Consulta gratis</p>
-        <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-ink">¿Está libre tu zona?</h1>
+        <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-ink">¿Quién tiene la mejor web de tu zona?</h1>
         <p class="mt-6 text-lg text-ink-soft leading-relaxed max-w-xl">
-          Solo trabajo con un negocio por oficio y zona. Dime a qué te dedicas y dónde, y te contesto con lo que veo, en
-          lenguaje claro y sin compromiso.
+          Dime a qué te dedicas y dónde. Miro las webs de tu competencia en Google y te contesto con lo que veo y lo
+          que haría para que la mejor de tu zona sea la tuya, en lenguaje claro y sin compromiso.
         </p>
         <h2 class="mt-10 font-bold text-ink text-lg">Qué te digo</h2>
         <ul class="check-list mt-4 space-y-3 text-ink">

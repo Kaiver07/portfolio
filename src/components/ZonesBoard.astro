@@ -10,8 +10,8 @@ const { compact = false } = Astro.props;
 
 <div class="card overflow-hidden">
   <div class="flex flex-wrap items-baseline justify-between gap-2 px-6 pt-6">
-    <p class="font-bold text-ink text-lg">Zonas ocupadas</p>
-    <p class="text-sm text-ink-soft">Un solo negocio por oficio y zona</p>
+    <p class="font-bold text-ink text-lg">Dónde ya hay webs mías</p>
+    <p class="text-sm text-ink-soft">{site.leadsClaim}</p>
   </div>
   <ul class:list={['mt-4 grid', !compact && 'sm:grid-cols-2']}>
     {site.zonesTaken.map((z) => (
@@ -23,7 +23,7 @@ const { compact = false } = Astro.props;
         <span
           class:list={[
             'shrink-0 rounded-full px-2.5 py-0.5 text-xs font-bold',
-            z.status === 'Ocupada' ? 'bg-ink text-cream' : 'bg-accent-light text-accent-dark',
+            z.status === 'Publicada' ? 'bg-ink text-cream' : 'bg-accent-light text-accent-dark',
           ]}
         >
           {z.status}
@@ -32,7 +32,7 @@ const { compact = false } = Astro.props;
     ))}
   </ul>
   <div class="px-6 py-5 border-t border-ink/10 bg-cream-dark flex flex-wrap items-center justify-between gap-3">
-    <p class="text-sm text-ink-soft">¿Tu oficio y tu ciudad no están en la lista? Puede que estén libres.</p>
+    <p class="text-sm text-ink-soft">¿Tu oficio o tu ciudad no están? Hago la mejor web de tu zona.</p>
     <a href="/consulta-tu-zona/" class="link-cta text-sm">Consultar mi zona →</a>
   </div>
 </div>

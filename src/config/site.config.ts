@@ -52,11 +52,13 @@ export const site = {
 
   defaultTitle: 'Clientes desde Google para empresas de tejados, reformas y pavimentos | Yerai Jiménez',
   defaultDescription:
-    'Webs que ya salen en Google en tu ciudad, en exclusiva para un solo negocio por oficio y zona. Tú recibes las llamadas y pagas una cuota al mes, sin inversión inicial.',
+    'La web más completa de tu oficio en tu ciudad: una página por cada servicio y cada pueblo, rápida en el móvil y revisada cada semana. Tú recibes las llamadas y pagas una cuota al mes, sin inversión inicial.',
   defaultOgImage: '/og-default.jpg',
 
   // Cifras de la home: sumas de los cinco casos de oficios en producción
   // (contadas en el build de cada web). Si cambia un caso, cambian aquí.
+  // «Todas tienen leads»: dato de Yerai (17/10/2026), sin cifras publicadas.
+  leadsClaim: 'Todas mis webs publicadas reciben llamadas y solicitudes de presupuesto.',
   stats: [
     { value: '5', label: 'webs de oficios en producción' },
     { value: '66', label: 'localidades con página propia' },
@@ -241,7 +243,7 @@ export const site = {
         },
         {
           q: '¿La web es mía?',
-          a: 'Hay dos modalidades. En exclusiva, la web es mía, tú la usas en tu zona y pagas una cuota al mes sin inversión inicial. En propiedad, la web y el dominio son tuyos desde el primer día.',
+          a: 'Hay dos modalidades. En la cuota mensual, la web es mía, la usas tú con tus datos y no hay inversión inicial. En propiedad, la web y el dominio son tuyos desde el primer día.',
         },
       ],
     },
@@ -410,15 +412,15 @@ export const site = {
     },
   ] satisfies Case[],
 
-  // Zonas ocupadas: oficio y ciudad de cada web en exclusiva, sin nombres.
+  // Dónde ya hay webs: oficio y ciudad, sin nombres de negocio.
   // Servicios Generales Manuel no va aquí: es una web propia del negocio.
   zonesTaken: [
-    { trade: 'Tejados', place: 'Vitoria-Gasteiz y Álava', status: 'Ocupada' },
-    { trade: 'Impermeabilización', place: 'Benidorm y Marina Baixa', status: 'Ocupada' },
-    { trade: 'Resina epoxi y microcemento', place: 'Marbella y Costa del Sol', status: 'Ocupada' },
-    { trade: 'Hormigón impreso', place: 'Elche y Alicante', status: 'Ocupada' },
-    { trade: 'Tejados', place: 'Burgos', status: 'Reservada' },
-    { trade: 'Tejados', place: 'Miranda de Ebro', status: 'Reservada' },
+    { trade: 'Tejados', place: 'Vitoria-Gasteiz y Álava', status: 'Publicada' },
+    { trade: 'Impermeabilización', place: 'Benidorm y Marina Baixa', status: 'Publicada' },
+    { trade: 'Resina epoxi y microcemento', place: 'Marbella y Costa del Sol', status: 'Publicada' },
+    { trade: 'Hormigón impreso', place: 'Elche y Alicante', status: 'Publicada' },
+    { trade: 'Tejados', place: 'Burgos', status: 'En preparación' },
+    { trade: 'Tejados', place: 'Miranda de Ebro', status: 'En preparación' },
   ],
 
   // Lo que no se promete: el contrapunto a quien vende cursos y cifras.
@@ -459,17 +461,17 @@ export const site = {
   ],
 
   // ============================================================
-  // LA OFERTA: clientes en tu zona (web en exclusiva por oficio y ciudad).
+  // LA OFERTA: la mejor web de tu zona, con cuota mensual.
   // Sin precios publicados: la cuota depende del oficio y la ciudad.
   // ============================================================
   offer: {
     name: 'Clientes en tu zona',
     summary:
-      'Hago una web que sale en Google para un oficio en una ciudad, y se la cedo a un solo negocio de esa zona. Las llamadas y los presupuestos te llegan a ti. Tú pagas una cuota al mes, sin inversión inicial.',
+      'Hago la web más completa de tu oficio en tu ciudad y la pongo a tu nombre. Las llamadas y los presupuestos te llegan a ti. Tú pagas una cuota al mes, sin inversión inicial.',
     steps: [
       {
         title: 'Me dices tu oficio y tu ciudad',
-        text: 'Compruebo si la zona está libre. Solo trabajo con un negocio por oficio y zona, así que si ya hay alguien, te lo digo.',
+        text: 'Miro qué webs tiene tu competencia en Google y te digo qué haría falta para tener la mejor de tu zona.',
       },
       {
         title: 'Pongo la web a tu nombre',
@@ -487,7 +489,7 @@ export const site = {
     includes: [
       'Web con una página por servicio y por localidad',
       'Tu teléfono, tu WhatsApp y formulario de presupuesto',
-      'Exclusiva de tu oficio en tu zona',
+      'Más completa que la de tu competencia: cada servicio y cada pueblo con su página',
       'Un artículo nuevo cada semana, revisado antes de publicar',
       'Revisión semanal de cómo sale en Google',
       'Resumen mensual de lo que ha pasado',
@@ -498,7 +500,7 @@ export const site = {
     comparison: [
       { label: 'Pago al empezar', agency: 'Sí, la web se paga antes de que traiga nada', me: 'No: cuota al mes' },
       { label: 'Quién se ocupa de Google', agency: 'Tú, o lo pagas aparte', me: 'Yo, incluido' },
-      { label: 'Tu competencia en la zona', agency: 'Puede contratar lo mismo', me: 'Un solo negocio por oficio y zona' },
+      { label: 'Lo completa que es', agency: 'Unas pocas páginas', me: 'Una página por servicio y por pueblo' },
       { label: 'Si no te compensa', agency: 'La inversión ya está hecha', me: 'Lo dejas al final de la permanencia acordada' },
     ],
     faqs: [
@@ -507,16 +509,12 @@ export const site = {
         a: 'Depende del oficio y de la ciudad: cuánta competencia hay y cuánto vale un trabajo medio. Te digo la cuota antes de empezar, por escrito, y no hay inversión inicial.',
       },
       {
-        q: '¿Por qué solo un negocio por zona?',
-        a: 'Porque si diera la misma web a dos empresas del mismo oficio en la misma ciudad, competiría contra mí mismo y ninguna de las dos saldría ganando.',
-      },
-      {
         q: '¿La web es mía?',
-        a: 'En esta modalidad, la web y el dominio son míos y tú los usas en exclusiva mientras dure el acuerdo. Tu teléfono, tu ficha de Google y tus clientes son siempre tuyos. Si prefieres una web en propiedad, también la hago.',
+        a: 'En esta modalidad, la web y el dominio son míos y tú los usas mientras dure el acuerdo. Tu teléfono, tu ficha de Google y tus clientes son siempre tuyos. Si prefieres una web en propiedad, también la hago.',
       },
       {
         q: '¿Qué pasa si lo dejo?',
-        a: 'Al terminar la permanencia acordada puedes dejarlo. La web deja de llevar tus datos y la zona vuelve a quedar libre para otro negocio.',
+        a: 'Al terminar la permanencia acordada puedes dejarlo. La web deja de llevar tus datos y tus llamadas.',
       },
       {
         q: '¿Me garantizas salir el primero en Google?',
@@ -524,7 +522,7 @@ export const site = {
       },
       {
         q: '¿Y si ya tengo web?',
-        a: 'Puedes quedártela. Antes de nada te digo gratis cómo estás hoy en Google en tu ciudad y si te compensa una web en exclusiva o mejorar la tuya.',
+        a: 'Puedes quedártela. Antes de nada te digo gratis cómo estás hoy en Google en tu ciudad y si te compensa una web nueva o mejorar la tuya.',
       },
     ],
   },
@@ -550,7 +548,7 @@ export const site = {
     },
   ],
 
-  // Servicios complementarios, para quien no busca la exclusiva.
+  // Servicios complementarios, para quien no quiere cuota mensual.
   extras: [
     {
       slug: 'web-en-propiedad',
@@ -582,7 +580,7 @@ export const site = {
   process: [
     {
       title: 'Consulta gratis',
-      text: 'Me dices tu oficio y tu ciudad. Te digo si la zona está libre y, de paso, cómo estás hoy en Google frente a tu competencia, aunque no trabajemos juntos.',
+      text: 'Me dices tu oficio y tu ciudad. Te digo cómo estás hoy en Google frente a tu competencia y qué haría, aunque no trabajemos juntos.',
     },
     {
       title: 'Datos reales',
