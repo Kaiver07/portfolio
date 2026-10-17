@@ -1,4 +1,6 @@
 ---
+import { site } from '../config/site.config';
+
 interface Props {
   title?: string;
   text?: string;
@@ -18,6 +20,7 @@ const {
     </div>
     <div class="flex flex-wrap gap-3">
       <a href="/consulta-tu-zona/" class="btn-cta text-base">Consultar mi zona</a>
+      <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 rounded-full border-2 border-cream/25 font-semibold hover:border-cream transition-colors">WhatsApp {site.phone}</a>
       <a href="/como-funciona/" class="inline-flex items-center justify-center px-6 py-3 rounded-full border-2 border-cream/25 font-semibold hover:border-cream transition-colors">Cómo funciona</a>
     </div>
   </div>

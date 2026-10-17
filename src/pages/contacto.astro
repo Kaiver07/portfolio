@@ -17,6 +17,8 @@ const description = 'Escríbeme para hablar de la web de tu negocio de tejados, 
       </p>
 
       <div class="flex flex-col gap-3">
+        <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" class="link-cta text-lg">WhatsApp: {site.phone} ↗</a>
+        <a href={`tel:${site.phoneIntl}`} class="link-cta text-lg">Llamar: {site.phone}</a>
         <a href={`mailto:${site.email}`} class="link-cta text-lg">{site.email}</a>
         <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="link-cta text-lg">LinkedIn ↗</a>
       </div>

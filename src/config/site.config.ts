@@ -45,6 +45,10 @@ export const site = {
   name: 'Yerai Jiménez',
   role: 'Clientes por Google para oficios',
   email: 'yerayjimeenez07@gmail.com',
+  phone: '664 86 10 90',
+  phoneIntl: '+34664861090',
+  // Enlace de WhatsApp con un mensaje ya escrito.
+  whatsapp: 'https://wa.me/34664861090?text=' + encodeURIComponent('Hola Yerai, quiero saber cómo está mi zona en Google. Mi oficio es: ... y trabajo en: ...'),
   linkedin: 'https://www.linkedin.com/in/yeray-jimenez0770/',
   github: 'https://github.com/Kaiver07',
   locale: 'es_ES',

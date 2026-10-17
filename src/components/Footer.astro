@@ -11,7 +11,8 @@ const year = new Date().getFullYear();
         La mejor web de tu oficio en tu zona, para que las llamadas te lleguen a ti. Tejados, impermeabilización,
         pavimentos, fontanería y reformas.
       </p>
-      <a href={`mailto:${site.email}`} class="mt-4 inline-block font-semibold text-ink hover:text-accent-dark">{site.email}</a>
+      <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" class="mt-4 block font-semibold text-ink hover:text-accent-dark">WhatsApp {site.phone}</a>
+      <a href={`mailto:${site.email}`} class="mt-1 block font-semibold text-ink hover:text-accent-dark">{site.email}</a>
     </div>
 
     <nav aria-label="Oficios">
@@ -34,5 +35,5 @@ const year = new Date().getFullYear();
       </ul>
     </nav>
   </div>
-  <div class="section-container pb-8 text-xs text-ink-soft">© {year} {site.name}</div>
+  <div class="section-container pb-24 sm:pb-8 text-xs text-ink-soft">© {year} {site.name}</div>
 </footer>

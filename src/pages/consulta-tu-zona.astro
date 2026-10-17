@@ -49,17 +49,18 @@ const checks = [
       </div>
 
       <div class="card p-7 lg:p-8 bg-cream-dark self-start">
-        <h2 class="text-xl font-bold text-ink">Pregúntame por email</h2>
+        <h2 class="text-xl font-bold text-ink">Escríbeme por WhatsApp</h2>
         <p class="mt-2 text-ink-soft leading-relaxed">
-          El botón abre tu correo con lo que necesito ya escrito. Solo tienes que rellenarlo.
+          El botón abre WhatsApp con el mensaje ya escrito. Solo tienes que poner tu oficio y tu ciudad.
         </p>
-        <a href={mailto} class="btn-cta w-full mt-6 text-base">Consultar mi zona</a>
+        <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" class="btn-cta w-full mt-6 text-base">Consultar por WhatsApp</a>
         <p class="mt-4 text-sm text-ink-soft">
-          ¿Prefieres escribir tú? <a href={`mailto:${site.email}`} class="font-semibold text-ink underline">{site.email}</a>
+          O llámame al <a href={`tel:${site.phoneIntl}`} class="font-semibold text-ink underline">{site.phone}</a>, o
+          <a href={mailto} class="font-semibold text-ink underline">escríbeme un email</a>.
         </p>
         <div class="mt-8 hairline pt-6 text-sm text-ink-soft space-y-2">
           <p><span class="font-semibold text-ink">Necesito:</span> oficio, ciudad y, si los tienes, tu web y tu ficha de Google.</p>
-          <p><span class="font-semibold text-ink">Te contesto:</span> por email, por escrito.</p>
+          <p><span class="font-semibold text-ink">Te contesto:</span> yo mismo, por WhatsApp o por email.</p>
         </div>
       </div>
     </div>
